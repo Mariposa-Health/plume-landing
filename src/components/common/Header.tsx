@@ -11,7 +11,7 @@ export default function Header() {
     <header className="w-full">
       <div className="hidden lg:block w-full max-w-[1440px] h-[169px] mx-auto px-[174px] py-12">
         <div className="flex items-center justify-between">
-          <div className="w-[153px] h-[52px]">
+          <a href="https://getplume.co/" className="w-[153px] h-[52px]">
             <Image
               src="/logo.svg"
               alt="Plume logo"
@@ -19,14 +19,14 @@ export default function Header() {
               height={52}
               className="w-full h-full"
             />
-          </div>
+          </a>
 
           <div className="flex items-center gap-[45px]">
-            <Button variant="outline">
+            <Button variant="outline" href="https://auth.getplume.co/oauth/account/login">
               Login
             </Button>
             
-            <Button variant="primary">
+            <Button variant="primary" href="https://getplume.co/get-started">
               Get Started
             </Button>
           </div>
@@ -34,7 +34,7 @@ export default function Header() {
       </div>
 
       <div className="lg:hidden flex items-center justify-between px-4 py-3">
-        <div className="w-[106px] h-[36px]">
+        <a href="https://getplume.co/" className="w-[106px] h-[36px]">
           <Image
             src="/logo.svg"
             alt="Plume logo"
@@ -42,10 +42,10 @@ export default function Header() {
             height={36}
             className="w-full h-full"
           />
-        </div>
+        </a>
 
         <div className="flex items-center gap-3">
-          <Button variant="primary" className="inline-flex">
+          <Button variant="primary" href="https://getplume.co/get-started" className="inline-flex">
             Get Started
           </Button>
 
@@ -66,9 +66,9 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white shadow-lg">
           <div className="px-4 py-3">
-            <button className="block w-full text-left py-2 px-4 hover:bg-gray-100 rounded">
+            <a href="https://auth.getplume.co/oauth/account/login" className="block w-full text-left py-2 px-4 hover:bg-gray-100 rounded">
               <span className="text-[#6816AF] font-fibra text-base font-semibold">Login</span>
-            </button>
+            </a>
           </div>
         </div>
       )}

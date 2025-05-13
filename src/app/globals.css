@@ -14,6 +14,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
   --color-plum-100: var(--plum-100);
   --color-plum-dark: var(--plum-dark);
   --color-plum-white: var(--plum-white);
@@ -45,4 +46,10 @@ button:hover {
 .font-fibra {
   font-family: 'Fibra One', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 600;
+}
+
+.font-cooper {
+  font-family: 'Cooper Hewitt', sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }

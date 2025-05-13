@@ -4,9 +4,11 @@ import Hero from '@/sections/Hero';
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <Hero />
+      <main className="flex-1">
+        <Hero />
+      </main>
       <Footer />
     </div>
   );
