@@ -21,6 +21,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Fibra+One:wght@400;600&display=swap" 
           rel="stylesheet" 
         />
+        <link 
+          href="https://fonts.cdnfonts.com/css/cooper-tl" 
+          rel="stylesheet" 
+        />
       </head>
       <body className={inter.className}>
         {children}
