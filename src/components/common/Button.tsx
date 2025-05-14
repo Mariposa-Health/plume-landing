@@ -23,7 +23,6 @@ const Button = ({
   href,
   ...props 
 }: ButtonProps | LinkProps) => {
-  // Base classes without rounded styles
   const baseClasses = 'flex justify-center items-center font-fibra font-semibold transition-colors whitespace-nowrap';
   
   const variantClasses = {
