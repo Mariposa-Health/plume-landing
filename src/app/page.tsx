@@ -5,6 +5,7 @@ import Essentials from '@/sections/Essentials';
 import HowItWorks from '@/sections/HowItWorks';
 import FeaturedIn from '@/sections/Features';
 import AboutUs from '@/sections/About';
+import Testimonials from '@/sections/Testimonials';
 import Newsletter from '@/sections/Newsletter';
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <HowItWorks />
         <FeaturedIn />
         <AboutUs />
+        <Testimonials />
         <Newsletter />
       </main>
       <Footer />
