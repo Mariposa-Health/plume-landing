@@ -3,6 +3,9 @@ import Header from '@/components/common/Header';
 import Hero from '@/sections/Hero';
 import Essentials from '@/sections/Essentials';
 import HowItWorks from '@/sections/HowItWorks';
+import FeaturedIn from '@/sections/Features';
+import AboutUs from '@/sections/About';
+import Newsletter from '@/sections/Newsletter';
 
 export default function Home() {
   return (
@@ -12,7 +15,9 @@ export default function Home() {
         <Hero />
         <Essentials />
         <HowItWorks />
-        <div className='pt-64'>Featured in...</div>
+        <FeaturedIn />
+        <AboutUs />
+        <Newsletter />
       </main>
       <Footer />
     </div>

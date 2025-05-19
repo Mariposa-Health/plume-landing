@@ -19,12 +19,12 @@ export default function Hero() {
         <div className="relative z-10 flex items-center w-full">
           <div className="ml-[120px] mt-[107px] mb-[309px] max-w-[399px]">
             <h1 className="text-[#3A0469] font-cooper text-[60px] font-light leading-[72px] mb-6">
-              Lorem ipsum
+            Level Up Your
               <br />
-              dolor sit Title
+              Gender Transition
             </h1>
             <p className="text-[#1F292E] font-fibra text-base font-normal leading-6 mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Join thousands of trans folks getting gender-affirming care created by trans people, for trans people.
             </p>
             <Button 
               variant="hero" 
@@ -51,10 +51,10 @@ export default function Hero() {
         
         <div className="px-4 py-8 text-center">
           <h1 className="text-[#3A0469] font-cooper text-[36px] font-light leading-[38px] mb-6">
-            Lorem Ipsum Title
+          $32 per month plus copay with insurance, 
           </h1>
           <p className="text-[#1F292E] font-fibra text-base font-normal leading-6 mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          or $99 per month if self-paid
           </p>
           <Button 
             variant="hero" 
