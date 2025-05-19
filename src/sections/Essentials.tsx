@@ -30,7 +30,7 @@ export default function Essentials() {
                 <div className="p-6 rounded-[20px]">
                   <div className="w-12 h-12 mb-4">
                     <Image
-                      src="/essentials-1.png"
+                      src="/images/essentials/essentials-1.png"
                       alt="Gender-affirming care icon"
                       width={48}
                       height={48}
@@ -45,7 +45,7 @@ export default function Essentials() {
                 <div className="p-6 rounded-[20px]">
                   <div className="w-12 h-12 mb-4">
                     <Image
-                      src="/essentials-2.png"
+                      src="/images/essentials/essentials-2.png"
                       alt="Appointments icon"
                       width={48}
                       height={48}
@@ -60,7 +60,7 @@ export default function Essentials() {
                 <div className="p-6 rounded-[20px]">
                   <div className="w-12 h-12 mb-4">
                     <Image
-                      src="/essentials-3.png"
+                      src="/images/essentials/essentials-3.png"
                       alt="Phone care icon"
                       width={48}
                       height={48}
@@ -75,7 +75,7 @@ export default function Essentials() {
                 <div className="p-6 rounded-[20px]">
                   <div className="w-12 h-12 mb-4">
                     <Image
-                      src="/essentials-4.png"
+                      src="/images/essentials/essentials-4.png"
                       alt="Community icon"
                       width={48}
                       height={48}
@@ -115,7 +115,7 @@ export default function Essentials() {
           <div className="text-center">
             <div className="w-12 h-12 mb-4 mx-auto">
               <Image
-                src="/essentials-1.png"
+                src="/images/essentials/essentials-1.png"
                 alt="Gender-affirming care icon"
                 width={48}
                 height={48}
@@ -130,7 +130,7 @@ export default function Essentials() {
           <div className="text-center">
             <div className="w-12 h-12 mb-4 mx-auto">
               <Image
-                src="/essentials-2.png"
+                src="/images/essentials/essentials-2.png"
                 alt="Appointments icon"
                 width={48}
                 height={48}
@@ -145,7 +145,7 @@ export default function Essentials() {
           <div className="text-center">
             <div className="w-12 h-12 mb-4 mx-auto">
               <Image
-                src="/essentials-3.png"
+                src="/images/essentials/essentials-3.png"
                 alt="Phone care icon"
                 width={48}
                 height={48}
@@ -160,7 +160,7 @@ export default function Essentials() {
           <div className="text-center">
             <div className="w-12 h-12 mb-4 mx-auto">
               <Image
-                src="/essentials-4.png"
+                src="/images/essentials/essentials-4.png"
                 alt="Community icon"
                 width={48}
                 height={48}
