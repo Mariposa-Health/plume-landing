@@ -128,7 +128,7 @@ export default function Essentials() {
           </div>
 
           <div className="text-center">
-            <div className="w-12 h-12 mb-4 mx-auto">
+            <div className="w-12 h-12 mb-4 mx-auto text-c">
               <Image
                 src="/images/essentials/essentials-2.png"
                 alt="Appointments icon"

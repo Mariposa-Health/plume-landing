@@ -7,6 +7,7 @@ import FeaturedIn from '@/sections/Features';
 import AboutUs from '@/sections/About';
 import Testimonials from '@/sections/Testimonials';
 import Newsletter from '@/sections/Newsletter';
+import Statistics from '@/sections/Statistics';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <HowItWorks />
         <FeaturedIn />
         <AboutUs />
+        <Statistics />
         <Testimonials />
         <Newsletter />
       </main>
