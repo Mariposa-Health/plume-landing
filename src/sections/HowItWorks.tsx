@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Button from '@/components/common/Button';
+import Section from '@/components/common/Section';
+import Wrapper from '@/components/common/Wrapper';
 
 export default function HowItWorks() {
   const steps = [
@@ -11,8 +13,8 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="relative">
-      <div className="hidden lg:block relative w-full h-[600px]">
+    <Section className='!pt-[0px]'>
+      <div className="hidden lg:block relative w-full">
         <div className="absolute inset-0 h-[442px]">
           <Image
             src="/how-it-works-bg.jpg"
@@ -105,6 +107,6 @@ export default function HowItWorks() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

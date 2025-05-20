@@ -7,6 +7,7 @@ interface SectionProps {
   children: ReactNode;
   className?: string;
   type?: SectionType;
+  style?: React.CSSProperties;
 }
 
 const getBackgroundColor = (type: SectionType) => {
@@ -20,12 +21,12 @@ const getBackgroundColor = (type: SectionType) => {
   }
 };
 
-export default function Section({ children, className, type = 'default' }: SectionProps) {
-  const baseClasses = 'py-[64px] md:py-[80px] lg:py-[100px]';
+export default function Section({ children, className, type = 'default', style }: SectionProps) {
+  const baseClasses = 'relative py-[64px] md:py-[80px] lg:py-[100px]';
   const bgColor = getBackgroundColor(type);
 
   return (
-    <section className={twMerge(baseClasses, bgColor, className)}>
+    <section className={twMerge(baseClasses, bgColor, className)} style={style}>
       {children}
     </section>
   );
