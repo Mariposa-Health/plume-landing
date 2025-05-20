@@ -1,5 +1,7 @@
 'use client';
 
+import Section from '@/components/common/Section';
+import Wrapper from '@/components/common/Wrapper';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -33,10 +35,10 @@ export default function FeaturedIn() {
   const desktopTranslate = Math.min(index, maxDesktopIndex) * SHIFT;
 
   return (
-    <section className="bg-white py-24 my-16">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-[120px]">
+    <Section>
+      <Wrapper>
         <h2 className="text-[#3A0469] font-cooper text-center text-[40px] lg:text-[48px] font-light leading-[48px] lg:leading-[60px] mb-12">
-          Featured&nbsp;in&hellip;
+          Featured in ...
         </h2>
 
         <div className="hidden lg:flex items-center justify-center">
@@ -93,7 +95,7 @@ export default function FeaturedIn() {
             </svg>
           </button>
         </div>
-      </div>
-    </section>
+      </Wrapper>
+    </Section>
   );
 }

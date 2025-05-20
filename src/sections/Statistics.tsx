@@ -1,3 +1,5 @@
+import Section from '@/components/common/Section';
+import Wrapper from '@/components/common/Wrapper';
 import Image from 'next/image';
 
 interface StatCardProps {
@@ -49,7 +51,7 @@ const StatCard = ({
   textPosition,
 }: StatCardProps) => (
   <div
-    className="w-full max-w-[384px] h-[240px] rounded-[20px] relative overflow-hidden flex items-start"
+    className="w-full lg:max-w-[384px] aspect-[384/240] rounded-[20px] relative overflow-hidden flex items-start"
     style={{ background }}
   >
     <Image
@@ -86,14 +88,14 @@ const StatCard = ({
 
 export default function Statistics() {
   return (
-    <section className="py-16 lg:py-20">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <Section>
+      <Wrapper>
         <div className="flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-6">
           {statisticsData.map((stat) => (
             <StatCard key={stat.number} {...stat} />
           ))}
         </div>
-      </div>
-    </section>
+      </Wrapper>
+    </Section>
   );
 }

@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Section from '@/components/common/Section';
+import Wrapper from '@/components/common/Wrapper';
 
 const testimonials = [
   {
@@ -55,12 +57,12 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
       <div className="mb-6">
         <StarRating />
       </div>
-      
+
       <p className="text-[#1F292E] font-fibra text-[18px] font-normal leading-6 mb-6">
         {testimonial.text}
       </p>
     </div>
-    
+
     <p className="text-[#1F292E] font-fibra text-[18px] font-semibold leading-[26px]">
       {testimonial.member}
     </p>
@@ -81,95 +83,97 @@ export default function Testimonials() {
   const getNextSlideIndex = () => (currentSlide + 1) % testimonials.length;
 
   return (
-    <section className="relative pt-16 lg:pt-20 overflow-hidden" style={{
+    <Section className='!pb-[0px]' style={{
       background: `url('/images/testimonials/testimonials-bg.jpg') lightgray 50% / cover no-repeat`
     }}>
-      <div className="hidden lg:block">
-        <div className="max-w-[1200px] mx-auto px-8">
-          <div className="flex items-start gap-[77px]">
-            <div className="w-[400px] flex-shrink-0">
-              <h2 className="text-[#1F292E] font-cooper text-[48px] font-light leading-[60px] mb-8">
-                For your gender journey and more —we've got you.
-              </h2>
-              
-              <div className="w-[332px] h-[400px] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/testimonials/testimonial-person.png"
-                  alt="Plume member"
-                  width={332}
-                  height={521}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
+      <Wrapper>
+        <div className="hidden lg:block">
+          <div className="max-w-[1200px] mx-auto px-8">
+            <div className="flex items-start gap-[77px]">
+              <div className="w-[400px] flex-shrink-0">
+                <h2 className="text-[#1F292E] font-cooper text-[48px] font-light leading-[60px] mb-8">
+                  For your gender journey and more — we&apos;ve got you.
+                </h2>
 
-            <div className="flex flex-col items-center">
-              <div className="flex gap-6 mb-6">
-                <TestimonialCard 
-                  key={`current-${currentSlide}`}
-                  testimonial={testimonials[currentSlide]} 
-                />
-                <TestimonialCard 
-                  key={`next-${getNextSlideIndex()}`}
-                  testimonial={testimonials[getNextSlideIndex()]} 
-                />
+                <div className="w-[332px] h-[400px] overflow-hidden rounded-lg">
+                  <Image
+                    src="/images/testimonials/testimonial-person.png"
+                    alt="Plume member"
+                    width={332}
+                    height={521}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <button onClick={prevSlide} className="cursor-pointer hover:scale-110 transition-transform">
-                  <ArrowLeft />
-                </button>
-                <button onClick={nextSlide} className="cursor-pointer hover:scale-110 transition-transform">
-                  <ArrowRight />
-                </button>
+              <div className="flex flex-col items-center">
+                <div className="flex gap-6 mb-6">
+                  <TestimonialCard
+                    key={`current-${currentSlide}`}
+                    testimonial={testimonials[currentSlide]}
+                  />
+                  <TestimonialCard
+                    key={`next-${getNextSlideIndex()}`}
+                    testimonial={testimonials[getNextSlideIndex()]}
+                  />
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <button onClick={prevSlide} className="cursor-pointer hover:scale-110 transition-transform">
+                    <ArrowLeft />
+                  </button>
+                  <button onClick={nextSlide} className="cursor-pointer hover:scale-110 transition-transform">
+                    <ArrowRight />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="lg:hidden px-4">
-        <div className="flex flex-col items-center">
-          <h2 className="text-[#3A0469] text-center font-cooper text-[48px] font-light leading-[60px] mb-8">
-            For your gender journey and more —we've got you.
-          </h2>
+        <div className="lg:hidden">
+          <div className="flex flex-col items-center">
+            <h2 className="text-[#3A0469] text-center font-cooper text-[48px] font-light leading-[60px] mb-8">
+              For your gender journey and more — we&apos;ve got you.
+            </h2>
 
-          <div className="w-[330px] h-[349px] bg-white rounded-[18px] p-6 flex flex-col justify-between shadow-lg mb-8">
-            <div>
-              <div className="mb-6">
-                <StarRating />
+            <div className="w-[330px] h-[349px] bg-white rounded-[18px] p-6 flex flex-col justify-between shadow-lg mb-8">
+              <div>
+                <div className="mb-6">
+                  <StarRating />
+                </div>
+
+                <p className="text-[#1F292E] font-fibra text-[18px] font-normal leading-6 mb-6">
+                  {testimonials[currentSlide].text}
+                </p>
               </div>
-              
-              <p className="text-[#1F292E] font-fibra text-[18px] font-normal leading-6 mb-6">
-                {testimonials[currentSlide].text}
+
+              <p className="text-[#1F292E] font-fibra text-[18px] font-semibold leading-[26px]">
+                {testimonials[currentSlide].member}
               </p>
             </div>
-            
-            <p className="text-[#1F292E] font-fibra text-[18px] font-semibold leading-[26px]">
-              {testimonials[currentSlide].member}
-            </p>
-          </div>
 
-          <div className="flex items-center gap-4 mb-8">
-            <button onClick={prevSlide} className="cursor-pointer hover:scale-110 transition-transform">
-              <ArrowLeft />
-            </button>
-            <button onClick={nextSlide} className="cursor-pointer hover:scale-110 transition-transform">
-              <ArrowRight />
-            </button>
-          </div>
+            <div className="flex items-center gap-4 mb-8">
+              <button onClick={prevSlide} className="cursor-pointer hover:scale-110 transition-transform">
+                <ArrowLeft />
+              </button>
+              <button onClick={nextSlide} className="cursor-pointer hover:scale-110 transition-transform">
+                <ArrowRight />
+              </button>
+            </div>
 
-          <div className="w-full max-w-[332px] h-[400px] overflow-hidden rounded-lg mx-auto">
-            <Image
-              src="/images/testimonials/testimonial-person.png"
-              alt="Plume member"
-              width={332}
-              height={521}
-              className="w-full h-auto object-cover"
-            />
+            <div className="w-full max-w-[332px] h-[400px] overflow-hidden rounded-lg mx-auto">
+              <Image
+                src="/images/testimonials/testimonial-person.png"
+                alt="Plume member"
+                width={332}
+                height={521}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </Wrapper>
+    </Section>
   );
 }
