@@ -7,23 +7,23 @@ const essentialsItems = [
   {
     icon: '/icons/essentials/doctor.svg',
     alt: 'Gender-affirming care icon',
-    text: 'Gender-affirming care from experts in transgender health'
+    text: 'Gender-affirming care from experts in transgender health',
   },
   {
     icon: '/icons/essentials/calendar.svg',
     alt: 'Appointments icon',
-    text: 'Appointments available in days, not months'
+    text: 'Appointments available in days, not months',
   },
   {
     icon: '/icons/essentials/phone.svg',
     alt: 'Phone care icon',
-    text: 'Affirming care right from your phone'
+    text: 'Affirming care right from your phone',
   },
   {
     icon: '/icons/essentials/community.svg',
     alt: 'Community icon',
-    text: 'An online community with support groups, transition resources, and more'
-  }
+    text: 'An online community with support groups, transition resources, and more',
+  },
 ];
 
 export default function Essentials() {
@@ -31,15 +31,14 @@ export default function Essentials() {
     <Section type="primary">
       <Wrapper className="flex flex-col items-start justify-between lg:flex-row gap-[40px]">
         <div className="lg:flex-1 lg:max-w-[520px] text-center lg:text-left">
-          <h2 className="text-[#3A0469] font-cooper text-[36px] lg:text-[60px] font-light leading-[38px] lg:leading-[72px] mb-6">
-            Essentials for your gender journey
-          </h2>
-          <p className="text-[#1F292E] font-fibra text-base font-normal leading-6 mb-8">
-            Whether you are just beginning your transition or are years into your journey, we&apos;re here to connect you with the care and support you deserve.
+          <h2>Essentials for your gender journey</h2>
+          <p className="mb-[24px]">
+            Whether you are just beginning your transition or are years into your journey,
+            we&apos;re here to connect you with the care and support you deserve.
           </p>
           <div className="flex justify-center lg:justify-start">
             <Button
-              variant="hero"
+              variant="primary"
               href="https://getplume.co/get-started"
               className="w-full max-w-[312px] lg:max-w-[378px] h-[48px] px-5 py-[10px]"
             >

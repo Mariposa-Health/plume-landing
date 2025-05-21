@@ -5,7 +5,7 @@ import Wrapper from '@/components/common/Wrapper';
 
 export default function Hero() {
   return (
-    <Section className='!pt-[0px] lg:!pt-[100px] lg:min-h-[calc(100vh-169px)] lg:flex lg:items-center overflow-hidden'>
+    <Section className="!pt-[0px] lg:!pt-[100px] lg:min-h-[calc(100vh-169px)] lg:flex lg:items-center overflow-hidden">
       <Wrapper>
         <div className="hidden lg:flex w-full relative">
           <div className="absolute inset-0">
@@ -22,15 +22,16 @@ export default function Hero() {
           <div className="relative z-10 flex items-center w-full">
             <div className="max-w-[399px]">
               <h1 className="text-[#3A0469] font-cooper text-[60px] font-light leading-[72px] mb-6">
-              Level Up Your
+                Level Up Your
                 <br />
                 Gender Transition
               </h1>
               <p className="text-[#1F292E] font-fibra text-base font-normal leading-6 mb-8">
-              Join thousands of trans folks getting gender-affirming care created by trans people, for trans people.
+                Join thousands of trans folks getting gender-affirming care created by trans people,
+                for trans people.
               </p>
-              <Button 
-                variant="hero" 
+              <Button
+                variant="primary"
                 href="https://getplume.co/get-started"
                 className="w-[378px] h-[48px] px-5 py-[10px]"
               >
@@ -54,13 +55,13 @@ export default function Hero() {
 
           <div className="text-center">
             <h1 className="text-[#3A0469] font-cooper text-[36px] font-light leading-[38px] mb-6">
-            $32 per month plus copay with insurance,
+              $32 per month plus copay with insurance,
             </h1>
             <p className="text-[#1F292E] font-fibra text-base font-normal leading-6 mb-8">
-            or $99 per month if self-paid
+              or $99 per month if self-paid
             </p>
             <Button
-              variant="hero"
+              variant="primary"
               href="https://getplume.co/get-started"
               className="w-[312px] h-[48px] px-5 py-[10px] mx-auto"
             >

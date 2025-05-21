@@ -10,10 +10,7 @@ export default function AboutUs() {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[72px]">
           <div className="w-[calc(100%+64px)] -mx-8 lg:w-[616px] lg:mx-0 aspect-[390/240] lg:aspect-[616/413] lg:rounded-[18px] overflow-hidden order-1 lg:order-2">
             <picture>
-              <source
-                media="(min-width: 1024px)"
-                srcSet="/about-us-image-desktop.jpg"
-              />
+              <source media="(min-width: 1024px)" srcSet="/about-us-image-desktop.jpg" />
               <Image
                 src="/about-us-image-mobile.jpg"
                 alt="About Plume Health"
@@ -32,12 +29,13 @@ export default function AboutUs() {
               Our vision is to transform care for every trans life.
             </h3>
             <p className="text-[#1F292E] font-fibra text-base font-normal leading-6 mb-8">
-              Plume Health is a virtual gender-affirming care clinic and a trusted source of community, 
-              wellness resources, and support for the trans and gender non-conforming community.
+              Plume Health is a virtual gender-affirming care clinic and a trusted source of
+              community, wellness resources, and support for the trans and gender non-conforming
+              community.
             </p>
             <div className="flex justify-center lg:justify-start">
               <Button
-                variant="hero"
+                variant="primary"
                 href="https://getplume.co/get-started"
                 className="w-[312px] lg:w-[378px] h-[48px] px-5 py-[10px]"
               >

@@ -17,7 +17,7 @@ export default function Header() {
             />
           </a>
 
-          <Button variant="primary" href="https://getplume.co/get-started">
+          <Button variant="secondary" href="https://getplume.co/get-started">
             Get Started
           </Button>
         </div>
