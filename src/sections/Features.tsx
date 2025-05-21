@@ -30,7 +30,7 @@ export default function FeaturedIn() {
         <div className="flex items-center gap-[16px] lg:gap-[32px] 2xl:gap-[64px]">
           <button
             className="features-button-prev !w-[34px] !h-[34px] !static !m-0 after:!content-none hover:opacity-60 transition-opacity duration-300"
-            aria-label="Swipe to the left"
+            aria-label="Previous slide"
           >
             <ArrowPrevIcon />
           </button>
@@ -71,18 +71,14 @@ export default function FeaturedIn() {
             {logos.map((logo) => (
               <SwiperSlide key={logo.alt}>
                 <div className="flex justify-center items-center h-[54px]">
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    fill
-                  />
+                  <Image src={logo.src} alt={logo.alt} fill />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
           <button
             className="features-button-next !w-[34px] !h-[34px] !static !m-0 after:!content-none hover:opacity-60 transition-opacity duration-300"
-            aria-label="Swipe to the right"
+            aria-label="Next slide"
           >
             <ArrowNextIcon />
           </button>
