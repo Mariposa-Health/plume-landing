@@ -1,72 +1,51 @@
+'use client';
+
 import Image from 'next/image';
+
+import useMedia from '@/hooks/useMedia';
+
 import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
 
 export default function Hero() {
+  const isMobile = useMedia('lg');
+
   return (
-    <Section className='!pt-[0px] lg:!pt-[100px] lg:min-h-[calc(100vh-169px)] lg:flex lg:items-center overflow-hidden'>
-      <Wrapper>
-        <div className="hidden lg:flex w-full relative">
-          <div className="absolute inset-0">
-            <Image
-              src="/hero-image.jpg"
-              alt="Hero background"
-              width={1440}
-              height={720}
-              className="w-full h-full object-cover"
-              priority
-            />
-          </div>
-
-          <div className="relative z-10 flex items-center w-full">
-            <div className="max-w-[399px]">
-              <h1 className="text-[#3A0469] font-cooper text-[60px] font-light leading-[72px] mb-6">
-              Level Up Your
-                <br />
-                Gender Transition
-              </h1>
-              <p className="text-[#1F292E] font-fibra text-base font-normal leading-6 mb-8">
-              Join thousands of trans folks getting gender-affirming care created by trans people, for trans people.
-              </p>
-              <Button 
-                variant="hero" 
-                href="https://getplume.co/get-started"
-                className="w-[378px] h-[48px] px-5 py-[10px]"
-              >
-                Get started
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        <div className="lg:hidden flex flex-col">
-          <div className="w-full h-[400px] relative">
-            <Image
-              src="/hero-image.jpg"
-              alt="Hero background"
-              width={400}
-              height={400}
-              className="w-full h-full object-cover"
-              priority
-            />
-          </div>
-
-          <div className="text-center">
-            <h1 className="text-[#3A0469] font-cooper text-[36px] font-light leading-[38px] mb-6">
-            $32 per month plus copay with insurance,
-            </h1>
-            <p className="text-[#1F292E] font-fibra text-base font-normal leading-6 mb-8">
-            or $99 per month if self-paid
-            </p>
-            <Button
-              variant="hero"
-              href="https://getplume.co/get-started"
-              className="w-[312px] h-[48px] px-5 py-[10px] mx-auto"
-            >
-              Get started
-            </Button>
-          </div>
+    <Section className="flex flex-col lg:justify-center gap-[32px] md:gap-[40px] lg:min-h-[calc(100vh-100px)] !pt-[0px] lg:!pt-[100px] lg:bg-[#3A0469] overflow-hidden">
+      <picture className="w-full lg:h-full lg:absolute lg:inset-0 z-0">
+        <source media="(min-width: 1024px)" srcSet="/images/hero/hero-image-desktop.jpg" />
+        <Image
+          src="/images/hero/hero-image-mobile.jpg"
+          alt="Hero image"
+          width={isMobile ? 390 : 1440}
+          height={isMobile ? 240 : 454}
+          className="w-full lg:h-full lg:object-cover"
+          quality={100}
+          priority
+        />
+      </picture>
+      <Wrapper className="relative">
+        <div className="text-center lg:text-left lg:max-w-[500px]">
+          <h1 className="lg:!text-white">
+            Level Up Your
+            <br />
+            Gender Transition
+          </h1>
+          <p className="mb-[24px] text-[20px] leading-[30px] lg:text-white">
+            Join thousands of trans folks getting gender-affirming care created by trans people, for
+            trans people.
+          </p>
+          <Button
+            variant="primary"
+            href="https://getplume.co/get-started"
+            className="mb-[24px] mx-auto lg:mx-0"
+          >
+            Get started
+          </Button>
+          <strong className="lg:text-[20px] lg:leading-[30px] lg:text-white">
+            $32 per month plus copay with insurance, or $99 per month if self-paid
+          </strong>
         </div>
       </Wrapper>
     </Section>

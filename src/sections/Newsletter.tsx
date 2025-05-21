@@ -21,8 +21,10 @@ export default function Newsletter() {
           <h2 className="text-[#1F292E] text-center font-cooper text-[24px] leading-[36px] lg:text-[48px] lg:leading-[60px] font-light">
             Stay In The Loop
           </h2>
-          <p className="text-[#1F292E] text-center font-fibra text-base font-normal leading-6">
-            Get the latest on gender-affirming care, legal changes, books, culture, community stories, and more delivered right to your inbox.
+
+          <p className="text-[#1F292E] text-center font-fibra text-base font-normal leading-6 max-w-full">
+            Get the latest on gender-affirming care, legal changes, books, culture,
+            community stories, and more delivered right to your inbox.
           </p>
           <NewsletterForm />
         </div>
