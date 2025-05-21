@@ -24,15 +24,11 @@ export default function Newsletter() {
           </h2>
 
           <p className="text-[#1F292E] text-center font-fibra text-base font-normal leading-6 max-w-full">
-            Get the latest on gender-affirming care, legal changes, books, culture, 
-            community stories, and more delivered right to your inbox.
+            Get the latest on gender-affirming care, legal changes, books, culture, community
+            stories, and more delivered right to your inbox.
           </p>
 
-          <Button
-            variant="hero"
-            href="#newsletter-signup"
-            className="w-auto px-8 h-[48px]"
-          >
+          <Button variant="primary" href="#newsletter-signup" className="w-auto px-8 h-[48px]">
             Subscribe to the Newsletter
           </Button>
         </div>

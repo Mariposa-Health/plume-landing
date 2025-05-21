@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  
+
   --plum-100: #6816AF;
   --plum-dark: #3A0469;
   --plum-white: #FFF;
@@ -14,7 +14,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  
+
   --color-plum-100: var(--plum-100);
   --color-plum-dark: var(--plum-dark);
   --color-plum-white: var(--plum-white);
@@ -30,7 +30,31 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: var(--font-fibra, 'Fibra One'), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cooper, 'Cooper TL'), serif;
+  font-weight: 300;
+}
+
+h2 {
+  color: var(--plum-dark);
+  font-size: 36px;
+  line-height: 38px;
+  margin-bottom: 24px;
+
+  @media (min-width: theme('screens.md')) {
+    font-size: 48px;
+    line-height: 50px;
+  }
+
+  @media (min-width: theme('screens.lg')) {
+    font-size: 60px;
+    line-height: 72px;
+  }
 }
 
 button {
@@ -49,11 +73,7 @@ button:hover {
 }
 
 .font-cooper {
-  font-family: var(--font-cooper, 'Cooper TL'), serif; 
+  font-family: var(--font-cooper, 'Cooper TL'), serif;
   font-weight: 300;
   font-style: normal;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-cooper, 'Cooper TL'), serif;
 }
