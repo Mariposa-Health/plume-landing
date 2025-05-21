@@ -12,7 +12,7 @@ export default function Hero() {
   const isMobile = useMedia('lg');
 
   return (
-    <Section className="flex flex-col lg:justify-center gap-[32px] md:gap-[40px] lg:min-h-[calc(100vh-148px)] !pt-[0px] lg:!pt-[100px] lg:bg-[#3A0469] overflow-hidden">
+    <Section className="flex flex-col lg:justify-center gap-[32px] md:gap-[40px] lg:min-h-[calc(100vh-100px)] !pt-[0px] lg:!pt-[100px] lg:bg-[#3A0469] overflow-hidden">
       <picture className="w-full lg:h-full lg:absolute lg:inset-0 z-0">
         <source media="(min-width: 1024px)" srcSet="/images/hero/hero-image-desktop.jpg" />
         <Image
