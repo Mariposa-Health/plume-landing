@@ -30,7 +30,7 @@ export default function NewsletterForm() {
     });
     setLoading(false);
     if (res.ok) {
-      setMsg('Thanks! Please confirm via the email we just sent.');
+      setMsg('Thanks for subscribing to our newsletter!');
       setEmail('');
     } else {
       setMsg('Something went wrong — try again later.');
