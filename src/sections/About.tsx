@@ -1,9 +1,14 @@
+'use client';
+
 import Image from 'next/image';
 import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
+import useMedia from '@/hooks/useMedia';
 
 export default function AboutUs() {
+  const isMobile = useMedia('lg');
+
   return (
     <Section type="primary" className="!pt-[0px] lg:!pt-[100px]">
       <Wrapper>
@@ -14,8 +19,8 @@ export default function AboutUs() {
               <Image
                 src="/about-us-image-mobile.jpg"
                 alt="About Plume Health"
-                width={290}
-                height={240}
+                width={isMobile ? 390 : 616}
+                height={isMobile ? 240 : 413}
                 className="w-full h-full object-cover"
               />
             </picture>
