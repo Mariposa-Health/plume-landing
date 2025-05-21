@@ -20,6 +20,7 @@ export default function HowItWorks() {
   return (
     <Section className="!pt-0 lg:pb-0 bg-[#FFF8F0] lg:bg-[#FFF]">
       <picture>
+        {/* TODO: check breakpoints */}
         <source
           media="(min-width: 1024px)"
           srcSet="/images/how-it-works/how-it-works-image-desktop.jpg"
