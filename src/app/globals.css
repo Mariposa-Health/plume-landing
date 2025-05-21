@@ -44,12 +44,16 @@ button:hover {
 }
 
 .font-fibra {
-  font-family: 'Fibra One', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-fibra, 'Fibra One'), sans-serif;
   font-weight: 400;
 }
 
 .font-cooper {
-  font-family: 'Cooper Hewitt', sans-serif;
+  font-family: var(--font-cooper, 'Cooper TL'), serif; 
   font-weight: 300;
   font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cooper, 'Cooper TL'), serif;
 }
