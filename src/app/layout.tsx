@@ -1,8 +1,35 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const cooper = localFont({
+  src: [
+    {
+      path: './fonts/coopertl-light.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-cooper',
+  display: 'swap',
+});
+
+const fibra = localFont({
+  src: [
+    {
+      path: './fonts/fibraone-regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/fibraone-semibold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-fibra',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Plume Health - Transform Healthcare for Every Trans Life",
@@ -16,17 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Fibra+One:wght@400;600&display=swap" 
-          rel="stylesheet" 
-        />
-        <link 
-          href="https://fonts.cdnfonts.com/css/cooper-tl" 
-          rel="stylesheet" 
-        />
-      </head>
-      <body className={inter.className}>
+      <body className={`${cooper.variable} ${fibra.variable}`}>
         {children}
       </body>
     </html>
