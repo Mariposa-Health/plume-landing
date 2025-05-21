@@ -35,7 +35,7 @@ body {
   font-family: var(--font-fibra, 'Fibra One'), sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   font-family: var(--font-cooper, 'Cooper TL'), serif;
   font-weight: 300;
 }
@@ -55,6 +55,13 @@ h2 {
     font-size: 60px;
     line-height: 72px;
   }
+}
+
+h3 {
+  color: var(--plum-dark);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
 }
 
 button {
