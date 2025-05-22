@@ -14,29 +14,29 @@ interface StatCardProps {
 
 const statisticsData: StatCardProps[] = [
   {
-    image: '/images/statistics/stat-1.png',
+    image: '/images/statistics/stats-first-image.jpg',
     number: '40,000',
     textAbove: 'Served over',
     textBelow: 'trans folks',
     background: 'linear-gradient(135deg, #A78BFA 0%, #6B46C1 100%)',
-    alt: 'Person representing served community',
+    alt: 'Confident person with curly hair smiling against a purple backdrop wearing a denim top',
     position: 'right',
   },
   {
-    image: '/images/statistics/stat-2.png',
+    image: '/images/statistics/stats-second-image.jpg',
     number: '47',
     textAbove: 'Active in',
     textBelow: 'states',
     background: 'linear-gradient(135deg, #D4AF37 0%, #B8860B 100%)',
-    alt: 'Person representing state coverage',
+    alt: 'Person smiling wearing a light purple coat against an olive green background',
     position: 'left',
   },
   {
-    image: '/images/statistics/stat-3.png',
+    image: '/images/statistics/stats-third-image.jpg',
     number: '2019',
     textBelow: 'Founded in',
     background: 'linear-gradient(135deg, #F59E95 0%, #B91C1C 100%)',
-    alt: 'Person representing founding year',
+    alt: 'Person with curly hair and bold makeup smiling against a pink backdrop, wearing hoop earrings and a leather jacket',
     position: 'right',
   },
 ];
