@@ -7,6 +7,7 @@ import useMedia from '@/hooks/useMedia';
 import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
+import { GET_STARTED_URL } from '@/constants';
 
 export default function Hero() {
   const isMobile = useMedia('lg');
@@ -37,11 +38,7 @@ export default function Hero() {
             Join thousands of trans folks getting gender-affirming care created by trans people, for
             trans people.
           </p>
-          <Button
-            variant="primary"
-            href="https://getplume.co/get-started"
-            className="mb-[24px] mx-auto lg:mx-0"
-          >
+          <Button variant="primary" href={GET_STARTED_URL} className="mb-[24px] mx-auto lg:mx-0">
             Get started
           </Button>
           <strong className="lg:text-[20px] lg:leading-[30px] lg:text-white">

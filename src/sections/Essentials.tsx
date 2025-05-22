@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Button from '@/components/common/Button';
 import Wrapper from '@/components/common/Wrapper';
 import Section from '@/components/common/Section';
+import { GET_STARTED_URL } from '@/constants';
 
 const essentialsItems = [
   {
@@ -37,10 +38,7 @@ export default function Essentials() {
             we&apos;re here to connect you with the care and support you deserve.
           </p>
           <div className="flex justify-center lg:justify-start">
-            <Button
-              variant="primary"
-              href="https://getplume.co/get-started"
-            >
+            <Button variant="primary" href={GET_STARTED_URL}>
               Get started
             </Button>
           </div>
@@ -56,9 +54,7 @@ export default function Essentials() {
                 height={40}
                 className="h-[40px] mb-[24px] mx-auto lg:mx-0 lg:object-contain lg:object-left"
               />
-              <p>
-                {item.text}
-              </p>
+              <p>{item.text}</p>
             </div>
           ))}
         </div>

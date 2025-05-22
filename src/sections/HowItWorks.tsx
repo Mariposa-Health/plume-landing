@@ -5,6 +5,7 @@ import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
 import useMedia from '@/functions/useMedia';
+import { GET_STARTED_URL } from '@/constants';
 
 export default function HowItWorks() {
   const isMobile = useMedia('lg');
@@ -55,7 +56,7 @@ export default function HowItWorks() {
             ))}
           </ul>
 
-          <Button variant="primary" href="https://getplume.co/get-started" className="mx-auto">
+          <Button variant="primary" href={GET_STARTED_URL} className="mx-auto">
             Start your journey
           </Button>
         </div>

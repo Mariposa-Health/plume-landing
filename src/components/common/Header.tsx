@@ -1,10 +1,11 @@
-'use client'
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Button from './Button';
 import Wrapper from './Wrapper';
+import { GET_STARTED_URL } from '@/constants';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,12 +35,7 @@ export default function Header() {
             className="h-[40px] lg:h-[52px] w-auto"
           />
         </Link>
-
-        <Button
-          className="whitespace-nowrap"
-          variant="secondary"
-          href="https://getplume.co/get-started"
-        >
+        <Button className="whitespace-nowrap" variant="secondary" href={GET_STARTED_URL}>
           Get Started
         </Button>
       </Wrapper>
