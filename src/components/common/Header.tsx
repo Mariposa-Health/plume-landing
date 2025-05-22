@@ -1,11 +1,14 @@
 'use client';
 
+import { GET_STARTED_URL } from '@/constants';
+
+import { useUtm } from '@/hooks/useUtm';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Button from './Button';
 import Wrapper from './Wrapper';
-import { useUtm } from '@/hooks/useUtm';
 import PromoBanner from './PromoBanner';
 
 export default function Header() {
@@ -39,11 +42,7 @@ export default function Header() {
             />
           </Link>
 
-          <Button
-            className="whitespace-nowrap"
-            variant="secondary"
-            href="https://getplume.co/get-started"
-          >
+          <Button className="whitespace-nowrap" variant="secondary" href={GET_STARTED_URL}>
             Get Started
           </Button>
         </Wrapper>

@@ -7,6 +7,7 @@ import useMedia from '@/hooks/useMedia';
 import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
+import { BREAKPOINTS, GET_STARTED_URL } from '@/constants';
 
 export default function Hero() {
   const isMobile = useMedia('lg');
@@ -16,8 +17,10 @@ export default function Hero() {
       className={`hero flex flex-col lg:justify-center gap-[32px] md:gap-[40px] !pt-[0px] lg:!pt-[100px] lg:bg-[#3A0469] overflow-hidden`}
     >
       <picture className="w-full lg:h-full lg:absolute lg:inset-0 z-0">
-        {/* TODO: check breakpoints */}
-        <source media="(min-width: 1024px)" srcSet="/images/hero/hero-image-desktop.jpg" />
+        <source
+          media={`(min-width: ${BREAKPOINTS.lg})`}
+          srcSet="/images/hero/hero-image-desktop.jpg"
+        />
         <Image
           src="/images/hero/hero-image-mobile.jpg"
           alt="Hero image"
@@ -39,11 +42,7 @@ export default function Hero() {
             Join thousands of trans folks getting gender-affirming care created by trans people, for
             trans people.
           </p>
-          <Button
-            variant="primary"
-            href="https://getplume.co/get-started"
-            className="mb-[24px] mx-auto lg:mx-0"
-          >
+          <Button variant="primary" href={GET_STARTED_URL} className="mb-[24px] mx-auto lg:mx-0">
             Get started
           </Button>
           <strong className="lg:text-[20px] lg:leading-[30px] lg:text-white">

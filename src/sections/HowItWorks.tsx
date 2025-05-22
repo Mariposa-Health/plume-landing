@@ -5,6 +5,7 @@ import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
 import useMedia from '@/functions/useMedia';
+import { BREAKPOINTS, GET_STARTED_URL } from '@/constants';
 
 export default function HowItWorks() {
   const isMobile = useMedia('lg');
@@ -20,9 +21,8 @@ export default function HowItWorks() {
   return (
     <Section className="!pt-0 lg:pb-0 bg-[#FFF8F0] lg:bg-[#FFF]">
       <picture className="w-full mb-[32px] md:mb-[40px] lg:mb-0">
-        {/* TODO: check breakpoints */}
         <source
-          media="(min-width: 1024px)"
+          media={`(min-width: ${BREAKPOINTS.lg})`}
           srcSet="/images/how-it-works/how-it-works-image-desktop.jpg"
         />
         <Image
@@ -55,7 +55,7 @@ export default function HowItWorks() {
             ))}
           </ul>
 
-          <Button variant="primary" href="https://getplume.co/get-started" className="mx-auto">
+          <Button variant="primary" href={GET_STARTED_URL} className="mx-auto">
             Start your journey
           </Button>
         </div>

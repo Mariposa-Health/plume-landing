@@ -14,7 +14,7 @@ export default function useMedia(breakpoint: Breakpoint) {
   }, [breakpoint])
 
   useEffect(() => {
-    if (typeof window !== undefined) {
+    if (typeof window !== 'undefined') {
       getInnerWidth()
       window.addEventListener('resize', getInnerWidth)
       return () => {

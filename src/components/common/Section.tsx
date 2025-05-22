@@ -10,6 +10,7 @@ interface SectionProps {
   style?: React.CSSProperties;
 }
 
+/* eslint-disable indent */
 const getBackgroundColor = (type: SectionType) => {
   switch (type) {
     case 'primary':
@@ -20,6 +21,7 @@ const getBackgroundColor = (type: SectionType) => {
       return;
   }
 };
+/* eslint-enable indent */
 
 export default function Section({ children, className, type = 'default', style }: SectionProps) {
   const baseClasses = 'relative py-[64px] md:py-[80px] lg:py-[100px]';

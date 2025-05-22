@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import ArrowPrevIcon from '@/components/icons/ArrowPrevIcon';
 import ArrowNextIcon from '@/components/icons/ArrowNextIcon';
+import { SWIPER_BREAKPOINTS } from '@/constants';
 
 export default function FeaturedIn() {
   const logos = [
@@ -27,7 +28,7 @@ export default function FeaturedIn() {
       <Wrapper>
         <h2 className="text-center !mb-[32px]">Featured in ...</h2>
 
-        <div className="flex items-center gap-[16px] lg:gap-[32px] 2xl:gap-[64px]">
+        <div className="flex items-center gap-[16px] lg:gap-[32px] xl:gap-[64px]">
           <button
             className="features-button-prev !w-[34px] !h-[34px] !static !m-0 after:!content-none hover:opacity-60 transition-opacity duration-300"
             aria-label="Previous slide"
@@ -49,19 +50,18 @@ export default function FeaturedIn() {
               prevEl: '.features-button-prev',
               nextEl: '.features-button-next',
             }}
-            // TODO: check breakpoints
             breakpoints={{
-              560: {
+              [SWIPER_BREAKPOINTS.sm]: {
                 slidesPerView: 2,
               },
-              768: {
+              [SWIPER_BREAKPOINTS.md]: {
                 slidesPerView: 3,
               },
-              1024: {
+              [SWIPER_BREAKPOINTS.lg]: {
                 slidesPerView: 4,
                 spaceBetween: 32,
               },
-              1400: {
+              [SWIPER_BREAKPOINTS.xl]: {
                 slidesPerView: 4,
                 spaceBetween: 64,
               },

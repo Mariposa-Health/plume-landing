@@ -5,6 +5,7 @@ import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
 import useMedia from '@/hooks/useMedia';
+import { BREAKPOINTS, GET_STARTED_URL } from '@/constants';
 
 export default function AboutUs() {
   const isMobile = useMedia('lg');
@@ -15,9 +16,8 @@ export default function AboutUs() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-[32px] md:gap-[40px]">
           <div className="w-[calc(100%+64px)] -mx-8 lg:w-[51.3%] lg:mx-0 lg:rounded-[18px] overflow-hidden order-1 lg:order-2">
             <picture>
-              {/* TODO: check breakpoints */}
               <source
-                media="(min-width: 1024px)"
+                media={`(min-width: ${BREAKPOINTS.lg})`}
                 srcSet="/images/about-us/about-us-image-desktop.jpg"
               />
               <Image
@@ -39,11 +39,7 @@ export default function AboutUs() {
               community, wellness resources, and support for the trans and gender non-conforming
               community.
             </p>
-            <Button
-              variant="primary"
-              href="https://getplume.co/get-started"
-              className="m-auto lg:m-0"
-            >
+            <Button variant="primary" href={GET_STARTED_URL} className="m-auto lg:m-0">
               Get started
             </Button>
           </div>
