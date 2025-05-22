@@ -5,7 +5,7 @@ import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
 import useMedia from '@/hooks/useMedia';
-import { BREAKPOINTS } from '@/constants';
+import { BREAKPOINTS, GET_STARTED_URL } from '@/constants';
 
 export default function AboutUs() {
   const isMobile = useMedia('lg');
@@ -39,11 +39,7 @@ export default function AboutUs() {
               community, wellness resources, and support for the trans and gender non-conforming
               community.
             </p>
-            <Button
-              variant="primary"
-              href="https://getplume.co/get-started"
-              className="m-auto lg:m-0"
-            >
+            <Button variant="primary" href={GET_STARTED_URL} className="m-auto lg:m-0">
               Get started
             </Button>
           </div>

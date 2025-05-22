@@ -1,3 +1,5 @@
+export const GET_STARTED_URL = 'https://getplume.co/get-started';
+
 export const BREAKPOINTS = {
   sm: '640px',
   md: '768px',
