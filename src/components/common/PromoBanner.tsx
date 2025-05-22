@@ -1,7 +1,7 @@
 'use client';
 
 import { useUtm } from '@/hooks/useUtm';
-import { PROMO_CODES, PROMO_DISCOUNTS, PromoSource } from '@/constants/promo';
+import { PROMO_CODES, PROMO_DISCOUNTS, PromoSource } from '@/constants';
 
 export default function PromoBanner() {
   const { utmSource } = useUtm();
