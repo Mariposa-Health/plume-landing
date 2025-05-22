@@ -1,27 +1,57 @@
 import { NextResponse } from 'next/server';
-import { syncContact, attachCustomFields, subscribeToList } from '@/lib/activeCampaign';
+import { z } from 'zod';
+import { upsertContact, saveUTM, subscribe } from '@/lib/activeCampaign';
+import { isAppError } from '@/lib/error';
+
+const Payload = z.object({
+  email: z.string().email(),
+  utm: z.object({
+    utm_campaign: z.string().optional(),
+    utm_source:   z.string().optional(),
+    utm_medium:   z.string().optional(),
+  }),
+});
+
+type SuccessJson = { ok: true };
+type ErrorJson   = { ok: false; code: string; details?: unknown };
+
+function json200(body: SuccessJson) {
+  return NextResponse.json(body, { status: 200 });
+}
+
+function json400(body: ErrorJson) {
+  return NextResponse.json(body, { status: 400 });
+}
+
+function json500(body: ErrorJson) {
+  return NextResponse.json(body, { status: 500 });
+}
 
 export async function POST(req: Request) {
-  const { email, utm } = await req.json() as {
-    email: string;
-    utm: { utm_campaign?: string; utm_source?: string; utm_medium?: string };
-  };
-
-  if (!email?.includes('@')) {
-    return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
+  const body = await req.json();
+  const parsed = Payload.safeParse(body);
+  if (!parsed.success) {
+    return json400({
+      ok: false,
+      code: 'VALIDATION_ERROR',
+      details: parsed.error.flatten().fieldErrors,
+    });
   }
 
+  const { email, utm } = parsed.data;
+
   try {
-    const id = await syncContact(email);
-    await attachCustomFields(id, {
-      utm_campaign: utm.utm_campaign ?? '',
-      utm_source: utm.utm_source ?? '',
-      utm_medium: utm.utm_medium ?? '',
-    });
-    await subscribeToList(id);
-    return NextResponse.json({ ok: true });
-  } catch (e) {
-    console.error(e);
-    return NextResponse.json({ error: 'ActiveCampaign error' }, { status: 500 });
+    const id = await upsertContact(email);           
+    await saveUTM(id, utm);                         
+    await subscribe(id);                             
+    return json200({ ok: true });
+  } catch (err: unknown) {
+    console.error(err);
+
+    if (isAppError(err)) {
+      return json500({ ok: false, code: err.code, details: err.meta });
+    }
+
+    return json500({ ok: false, code: 'UNKNOWN' });
   }
 }
