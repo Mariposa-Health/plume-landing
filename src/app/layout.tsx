@@ -56,11 +56,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* TODO: remove after launch */}
-        <meta name="robots" content="noindex,nofollow" />
-        <meta name="googlebot" content="noindex,nofollow" />
-      </head>
       <body className={`${cooper.variable} ${fibra.variable} min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-1">{children}</main>
