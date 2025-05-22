@@ -1,27 +1,26 @@
-// add 'use client' if you want to use this hook in a your component
+'use client';
+import { useEffect, useState } from 'react'
+import config from '../../tailwind.config'
 
-import { useEffect, useState, useCallback } from 'react'
-import tailwindConfig from '../../tailwind.config'
-
-type Breakpoint = keyof typeof tailwindConfig.theme.extend.screens
+type Breakpoint = keyof typeof config.theme.extend.screens
 
 export default function useMedia(breakpoint: Breakpoint) {
   const [value, setValue] = useState(true)
 
-  const getInnerWidth = useCallback(() => {
-    const breakpointValue = parseInt(tailwindConfig.theme.extend.screens[breakpoint])
-    setValue(window.innerWidth < breakpointValue)
-  }, [breakpoint])
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      function getInnerWidth() {
+        const breakpointValue = parseInt(config.theme.extend.screens[breakpoint])
+        setValue(window.innerWidth < breakpointValue)
+      }
+
       getInnerWidth()
       window.addEventListener('resize', getInnerWidth)
       return () => {
         window.removeEventListener('resize', getInnerWidth)
       }
     }
-  }, [getInnerWidth])
+  }, [breakpoint])
 
   return value
 }
