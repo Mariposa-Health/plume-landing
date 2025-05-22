@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description:
     'Privacy Policy for Plume Health - Learn how we protect and handle your personal information.',
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 
