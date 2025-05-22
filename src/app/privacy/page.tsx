@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
 
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = {
   title: 'Privacy Policy - Plume Health',
   description:
