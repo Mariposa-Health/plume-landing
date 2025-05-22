@@ -1,27 +1,29 @@
 import { NextResponse } from 'next/server';
-import { syncContact, attachCustomFields, subscribeToList } from '@/lib/activeCampaign';
+import { upsertContact, saveUTM, subscribe } from '@/lib/activeCampaign';
+import { z } from 'zod';
+
+const Payload = z.object({
+  email: z.string().email(),
+  utm:   z.object({
+    utm_campaign: z.string().optional(),
+    utm_source:   z.string().optional(),
+    utm_medium:   z.string().optional(),
+  }),
+});
 
 export async function POST(req: Request) {
-  const { email, utm } = await req.json() as {
-    email: string;
-    utm: { utm_campaign?: string; utm_source?: string; utm_medium?: string };
-  };
-
-  if (!email?.includes('@')) {
-    return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
-  }
+  const json = await req.json();
+  const parse = Payload.safeParse(json);
+  if (!parse.success)
+    return NextResponse.json({ code: 'VALIDATION_ERROR' }, { status: 400 });
 
   try {
-    const id = await syncContact(email);
-    await attachCustomFields(id, {
-      utm_campaign: utm.utm_campaign ?? '',
-      utm_source: utm.utm_source ?? '',
-      utm_medium: utm.utm_medium ?? '',
-    });
-    await subscribeToList(id);
+    const id = await upsertContact(parse.data.email);
+    await saveUTM(id, parse.data.utm);
+    await subscribe(id);
     return NextResponse.json({ ok: true });
-  } catch (e) {
+  } catch (e: any) {
     console.error(e);
-    return NextResponse.json({ error: 'ActiveCampaign error' }, { status: 500 });
+    return NextResponse.json({ code: e.message ?? 'AC_ERROR' }, { status: 500 });
   }
 }
