@@ -72,6 +72,20 @@ picture {
   display: block;
 }
 
+.text-block {
+    :last-child {
+    margin-bottom: 0;
+  }
+
+  & > * {
+    margin-bottom: 16px;
+  }
+
+  h1, h2 {
+    margin-bottom: 24px;
+  }
+}
+
 .font-fibra {
   font-family: var(--font-fibra, 'Fibra One'), sans-serif;
   font-weight: 400;
