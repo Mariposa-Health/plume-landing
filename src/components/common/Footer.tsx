@@ -1,12 +1,16 @@
+'use client';
 import Image from 'next/image';
 import Wrapper from './Wrapper';
 import Link from 'next/link';
+import { useUtm } from '@/hooks/useUtm';
 
 export default function Footer() {
+  const { getPathWithUtm } = useUtm();
+
   return (
     <footer className="bg-[#340B65] py-[60px]">
       <Wrapper className="flex flex-col md:flex-row md:flex-wrap items-center md:items-start md:content-between gap-[24px]">
-        <Link href="/" className="w-fit">
+        <Link href={getPathWithUtm('/')} className="w-fit">
           <Image src="/logo-white.svg" alt="Plume logo" width={156} height={53} />
         </Link>
 
@@ -82,9 +86,8 @@ export default function Footer() {
 
         <ul className="flex flex-wrap content-center md:content-start gap-[24px] md:w-full">
           <li>
-            {/* TODO: check link when page will be implemented */}
             <Link
-              href="/privacy"
+              href={getPathWithUtm('/privacy')}
               className="text-white text-[14px] leading-[22px] underline decoration-current hover:decoration-transparent transition-colors duration-300"
             >
               Privacy
