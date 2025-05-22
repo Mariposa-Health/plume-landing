@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import StarsIcon from '@/components/icons/StarsIcon';
 import ArrowPrevIcon from '@/components/icons/ArrowPrevIcon';
 import ArrowNextIcon from '@/components/icons/ArrowNextIcon';
+import { SWIPER_BREAKPOINTS } from '@/constants';
 
 const testimonials = [
   {
@@ -55,7 +56,7 @@ export default function Testimonials() {
         background: `url('/images/testimonials/testimonials-bg.jpg') lightgray 50% / cover no-repeat`,
       }}
     >
-      <Wrapper className="relative lg:min-h-[570px] lg:flex lg:content-between lg:items-start lg:gap-[32px] 2xl:gap-[64px]">
+      <Wrapper className="relative lg:min-h-[570px] lg:flex lg:content-between lg:items-start lg:gap-[32px] xl:gap-[64px]">
         <h2 className="!mb-[32px] lg:flex-1 lg:max-w-[400px] lg:!text-[48px] lg:!leading-[60px]">
           For your gender journey and more — we&apos;ve got you.
         </h2>
@@ -76,10 +77,10 @@ export default function Testimonials() {
             pauseOnMouseEnter: true,
           }}
           breakpoints={{
-            768: {
+            [SWIPER_BREAKPOINTS.md]: {
               slidesPerView: 2,
             },
-            1400: {
+            [SWIPER_BREAKPOINTS.xl]: {
               slidesPerView: 2,
               spaceBetween: 64,
             },
@@ -92,7 +93,7 @@ export default function Testimonials() {
             </SwiperSlide>
           ))}
 
-          <div className="flex items-center justify-center gap-[64px] mt-[32px] 2xl:mt-[64px]">
+          <div className="flex items-center justify-center gap-[64px] mt-[32px] xl:mt-[64px]">
             <button
               className="testimonials-button-prev !w-[34px] !h-[34px] !static !m-0 after:!content-none hover:opacity-60 transition-opacity duration-300"
               aria-label="Previous slide"
