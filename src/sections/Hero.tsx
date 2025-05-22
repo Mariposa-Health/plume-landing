@@ -3,22 +3,17 @@
 import Image from 'next/image';
 
 import useMedia from '@/hooks/useMedia';
-import { useUtm } from '@/hooks/useUtm';
 
 import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
-import { PROMO_CODES } from '@/components/common/PromoBanner';
 
 export default function Hero() {
   const isMobile = useMedia('lg');
-  const { utmSource } = useUtm();
-  const hasPromo = utmSource && utmSource.toLowerCase() in PROMO_CODES;
-  const minHeight = hasPromo ? 'calc(100vh-136px)' : 'calc(100vh-100px)';
 
   return (
     <Section
-      className={`flex flex-col lg:justify-center gap-[32px] md:gap-[40px] lg:min-h-[${minHeight}] !pt-[0px] lg:!pt-[100px] lg:bg-[#3A0469] overflow-hidden`}
+      className={`hero flex flex-col lg:justify-center gap-[32px] md:gap-[40px] !pt-[0px] lg:!pt-[100px] lg:bg-[#3A0469] overflow-hidden`}
     >
       <picture className="w-full lg:h-full lg:absolute lg:inset-0 z-0">
         {/* TODO: check breakpoints */}
