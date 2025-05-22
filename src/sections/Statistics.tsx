@@ -1,5 +1,6 @@
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
+import { BREAKPOINTS } from '@/constants';
 import Image from 'next/image';
 
 interface StatCardProps {
@@ -59,12 +60,10 @@ const StatCard = ({
       src={image}
       alt={alt}
       fill
-      // TODO: check breakpoints
-      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      sizes={`(max-width: ${BREAKPOINTS.md}) 100vw, (max-width: ${BREAKPOINTS.lg}) 50vw, 33vw`}
       className="absolute inset-0 object-cover"
       priority
     />
-
     <div
       className={`
         relative w-fit-content z-2 text-center

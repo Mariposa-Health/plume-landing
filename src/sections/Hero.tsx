@@ -7,6 +7,7 @@ import useMedia from '@/hooks/useMedia';
 import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
+import { BREAKPOINTS } from '@/constants';
 
 export default function Hero() {
   const isMobile = useMedia('lg');
@@ -14,8 +15,10 @@ export default function Hero() {
   return (
     <Section className="flex flex-col lg:justify-center gap-[32px] md:gap-[40px] lg:min-h-[calc(100vh-100px)] !pt-[0px] lg:!pt-[100px] lg:bg-[#3A0469] overflow-hidden">
       <picture className="w-full lg:h-full lg:absolute lg:inset-0 z-0">
-        {/* TODO: check breakpoints */}
-        <source media="(min-width: 1024px)" srcSet="/images/hero/hero-image-desktop.jpg" />
+        <source
+          media={`(min-width: ${BREAKPOINTS.lg})`}
+          srcSet="/images/hero/hero-image-desktop.jpg"
+        />
         <Image
           src="/images/hero/hero-image-mobile.jpg"
           alt="Hero image"
