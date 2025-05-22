@@ -70,7 +70,7 @@ export default function FeaturedIn() {
           >
             {logos.map((logo) => (
               <SwiperSlide key={logo.alt}>
-                <div className="flex justify-center items-center h-[54px]">
+                <div className="flex justify-center items-center h-[54px] relative">
                   <Image src={logo.src} alt={logo.alt} fill />
                 </div>
               </SwiperSlide>

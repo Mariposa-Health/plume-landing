@@ -19,7 +19,7 @@ export default function HowItWorks() {
 
   return (
     <Section className="!pt-0 lg:pb-0 bg-[#FFF8F0] lg:bg-[#FFF]">
-      <picture>
+      <picture className="w-full mb-[32px] md:mb-[40px] lg:mb-0">
         {/* TODO: check breakpoints */}
         <source
           media="(min-width: 1024px)"

@@ -68,6 +68,10 @@ button {
   cursor: pointer;
 }
 
+picture {
+  display: block;
+}
+
 .font-fibra {
   font-family: var(--font-fibra, 'Fibra One'), sans-serif;
   font-weight: 400;
