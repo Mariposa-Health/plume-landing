@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import './globals.css';
 
 const cooper = localFont({
   src: [
@@ -32,8 +32,19 @@ const fibra = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Plume Health - Transform Healthcare for Every Trans Life",
-  description: "Virtual gender-affirming care and dedicated source of community, wellness resources, and support for the trans and gender community.",
+  title: 'Plume Health - Transform Healthcare for Every Trans Life',
+  description:
+    'Virtual gender-affirming care and dedicated source of community, wellness resources, and support for the trans and gender community.',
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -43,9 +54,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cooper.variable} ${fibra.variable}`}>
-        {children}
-      </body>
+      <head>
+        {/* TODO: remove after launch */}
+        <meta name="robots" content="noindex,nofollow" />
+        <meta name="googlebot" content="noindex,nofollow" />
+      </head>
+      <body className={`${cooper.variable} ${fibra.variable}`}>{children}</body>
     </html>
   );
 }

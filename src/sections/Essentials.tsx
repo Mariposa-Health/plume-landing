@@ -54,7 +54,7 @@ export default function Essentials() {
                 alt={item.alt}
                 width={40}
                 height={40}
-                className="h-[40px] w-auto mb-[24px] mx-auto lg:mx-0"
+                className="h-[40px] mb-[24px] mx-auto lg:mx-0 lg:object-contain lg:object-left"
               />
               <p>
                 {item.text}

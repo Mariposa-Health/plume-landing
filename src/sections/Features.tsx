@@ -3,7 +3,12 @@
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
 import Image from 'next/image';
-import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Keyboard, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import ArrowPrevIcon from '@/components/icons/ArrowPrevIcon';
+import ArrowNextIcon from '@/components/icons/ArrowNextIcon';
 
 export default function FeaturedIn() {
   const logos = [
@@ -17,82 +22,65 @@ export default function FeaturedIn() {
     { src: '/icons/features/advocate.svg', alt: 'Advocate' },
   ];
 
-  const LOGOS_PER_VIEW_DESKTOP = 4;
-  const ITEM_WIDTH = 192;
-  const GAP = 16;
-  const SHIFT = ITEM_WIDTH + GAP;
-  const WRAPPER_WIDTH = SHIFT * LOGOS_PER_VIEW_DESKTOP;
-  const maxDesktopIndex = logos.length - LOGOS_PER_VIEW_DESKTOP;
-
-  const [index, setIndex] = useState(0);
-
-  const nextDesktop = () => setIndex((i) => Math.min(i + 1, maxDesktopIndex));
-  const prevDesktop = () => setIndex((i) => Math.max(i - 1, 0));
-
-  const nextMobile = () => setIndex((i) => (i + 1) % logos.length);
-  const prevMobile = () => setIndex((i) => (i - 1 + logos.length) % logos.length);
-
-  const desktopTranslate = Math.min(index, maxDesktopIndex) * SHIFT;
-
   return (
     <Section>
       <Wrapper>
-        <h2 className="text-[#3A0469] font-cooper text-center text-[40px] lg:text-[48px] font-light leading-[48px] lg:leading-[60px] mb-12">
-          Featured in ...
-        </h2>
+        <h2 className="text-center !mb-[32px]">Featured in ...</h2>
 
-        <div className="hidden lg:flex items-center justify-center">
+        <div className="flex items-center gap-[16px] lg:gap-[32px] 2xl:gap-[64px]">
           <button
-            onClick={prevDesktop}
-            disabled={index === 0}
-            className="w-8 h-8 mr-6 disabled:opacity-40"
-            aria-label="Previous logos"
+            className="features-button-prev !w-[34px] !h-[34px] !static !m-0 after:!content-none hover:opacity-60 transition-opacity duration-300"
+            aria-label="Previous slide"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd" d="M21.602 8.998a1.5 1.5 0 0 1 0 2.121L16.004 17l5.598 5.598a1.5 1.5 0 0 1-2.122 2.122l-6.8-6.8a1.5 1.5 0 0 1 0-2.122l6.8-6.8a1.5 1.5 0 0 1 2.122 0Z" fill="#6816AF" />
-            </svg>
+            <ArrowPrevIcon />
           </button>
-
-          <div className="overflow-hidden" style={{ width: WRAPPER_WIDTH }}>
-            <div
-              className="flex gap-4 transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${desktopTranslate}px)` }}
-            >
-              {logos.map((l) => (
-                <div key={l.alt} className="flex-shrink-0 flex justify-center items-center w-[192px]">
-                  <Image src={l.src} alt={l.alt} width={160} height={80} className="object-contain h-[80px] w-auto" />
+          <Swiper
+            modules={[Navigation, Keyboard, Autoplay]}
+            loop={true}
+            spaceBetween={16}
+            slidesPerView={1}
+            keyboard={true}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            navigation={{
+              prevEl: '.features-button-prev',
+              nextEl: '.features-button-next',
+            }}
+            // TODO: check breakpoints
+            breakpoints={{
+              560: {
+                slidesPerView: 2,
+              },
+              768: {
+                slidesPerView: 3,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 32,
+              },
+              1400: {
+                slidesPerView: 4,
+                spaceBetween: 64,
+              },
+            }}
+            className="flex-1"
+          >
+            {logos.map((logo) => (
+              <SwiperSlide key={logo.alt}>
+                <div className="flex justify-center items-center h-[54px] relative">
+                  <Image src={logo.src} alt={logo.alt} fill />
                 </div>
-              ))}
-            </div>
-          </div>
-
+              </SwiperSlide>
+            ))}
+          </Swiper>
           <button
-            onClick={nextDesktop}
-            disabled={index === maxDesktopIndex}
-            className="w-8 h-8 ml-6 disabled:opacity-40"
-            aria-label="Next logos"
+            className="features-button-next !w-[34px] !h-[34px] !static !m-0 after:!content-none hover:opacity-60 transition-opacity duration-300"
+            aria-label="Next slide"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd" d="M12.398 25.002a1.5 1.5 0 0 1 0-2.122L17.996 17l-5.598-5.598a1.5 1.5 0 1 1 2.122-2.121l6.8 6.8a1.5 1.5 0 0 1 0 2.121l-6.8 6.8a1.5 1.5 0 0 1-2.122 0Z" fill="#6816AF" />
-            </svg>
-          </button>
-        </div>
-
-        <div className="lg:hidden flex items-center justify-center">
-          <button onClick={prevMobile} className="w-8 h-8 mr-4" aria-label="Previous logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd" d="M21.602 8.998a1.5 1.5 0 0 1 0 2.121L16.004 17l5.598 5.598a1.5 1.5 0 0 1-2.122 2.122l-6.8-6.8a1.5 1.5 0 0 1 0-2.122l6.8-6.8a1.5 1.5 0 0 1 2.122 0Z" fill="#6816AF" />
-            </svg>
-          </button>
-
-          <div className="w-[192px] flex justify-center">
-            <Image src={logos[index].src} alt={logos[index].alt} width={160} height={80} className="object-contain h-[80px] w-auto" />
-          </div>
-
-          <button onClick={nextMobile} className="w-8 h-8 ml-4" aria-label="Next logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd" d="M12.398 25.002a1.5 1.5 0 0 1 0-2.122L17.996 17l-5.598-5.598a1.5 1.5 0 1 1 2.122-2.121l6.8 6.8a1.5 1.5 0 0 1 0 2.121l-6.8 6.8a1.5 1.5 0 0 1-2.122 0Z" fill="#6816AF" />
-            </svg>
+            <ArrowNextIcon />
           </button>
         </div>
       </Wrapper>

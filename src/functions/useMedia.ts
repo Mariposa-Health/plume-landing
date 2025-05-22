@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
+import config from '../../tailwind.config'
 
-type Breakpoint = keyof typeof tailwindConfig.theme.extend.screens
+type Breakpoint = keyof typeof config.theme.extend.screens
 
 export default function useMedia(breakpoint: Breakpoint) {
   const [value, setValue] = useState(true)
 
   function getInnerWidth() {
-    const breakpointValue = parseInt(tailwindConfig.theme.extend.screens[breakpoint])
+    const breakpointValue = parseInt(config.theme.extend.screens[breakpoint])
     setValue(window.innerWidth < breakpointValue)
   }
 
