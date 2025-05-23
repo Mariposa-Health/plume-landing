@@ -99,6 +99,14 @@ export default function Footer() {
         <ul className="flex flex-wrap content-center md:content-start gap-[24px] md:w-full">
           <li>
             <Link
+              href={getPathWithUtm('/terms')}
+              className="text-white text-[14px] leading-[22px] underline decoration-current hover:decoration-transparent transition-colors duration-300"
+            >
+              Terms of Use
+            </Link>
+          </li>
+          <li>
+            <Link
               href={getPathWithUtm('/privacy')}
               className="text-white text-[14px] leading-[22px] underline decoration-current hover:decoration-transparent transition-colors duration-300"
             >

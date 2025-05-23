@@ -15,16 +15,16 @@ export const SWIPER_BREAKPOINTS = Object.fromEntries(
   ])
 ) as { [K in keyof typeof BREAKPOINTS]: number };
 export enum PromoSource {
-  Twitter = 'twitter',
+  Meta = 'meta',
   Reddit = 'reddit',
 }
 
 export const PROMO_CODES: Record<PromoSource, string> = {
-  [PromoSource.Twitter]: 'TWITTER20',
-  [PromoSource.Reddit]: 'REDDIT15',
+  [PromoSource.Meta]: 'Plume2025',
+  [PromoSource.Reddit]: 'Plume15',
 };
 
 export const PROMO_DISCOUNTS: Record<PromoSource, number> = {
-  [PromoSource.Twitter]: 20,
+  [PromoSource.Meta]: 15,
   [PromoSource.Reddit]: 15,
 };
