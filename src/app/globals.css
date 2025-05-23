@@ -37,7 +37,7 @@ body {
   &:has(.promo-banner) {
     .hero {
       @media (min-width: theme('screens.lg')) {
-        min-height: calc(100vh - 136px);
+        min-height: calc(100vh - 144px);
       }
     }
   }
