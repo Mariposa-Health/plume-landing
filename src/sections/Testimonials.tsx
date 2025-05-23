@@ -14,19 +14,23 @@ import { SWIPER_BREAKPOINTS } from '@/constants';
 
 const testimonials = [
   {
+    text: 'There was no gatekeeping or barriers to accessing the care I needed. Two years later, I couldn’t be happier with the progress I’ve already made',
+    member: 'Plume Member for 2 years',
+  },
+  {
     text: 'Plume helped me with every step of my gender journey and has helped me achieve happiness with myself that I never thought was possible.',
     member: 'Plume Member for 2 years',
   },
   {
-    text: "There was no gatekeeping or barriers to accessing the care I needed. Two years later, I couldn't be happier with the progress I've already made.",
+    text: 'Their telehealth model made it easy for me to access care without the stress of in-person visits, which was a huge relief.',
     member: 'Plume Member for 2 years',
   },
   {
-    text: 'The care team at Plume truly understands the trans experience and provides compassionate, comprehensive care that has transformed my life.',
-    member: 'Plume Member for 3 years',
+    text: 'Plume has enabled me to start my transition without the standard hassle. I feel more in control of my identity now than ever.',
+    member: 'Plume Member for 1 year',
   },
   {
-    text: "From day one, Plume's team made me feel seen, heard, and supported throughout my entire gender-affirming care journey.",
+    text: 'The resources that Plume provides are amazing. The easy access to support groups and treatments is such a relief and beyond helpful!',
     member: 'Plume Member for 1 year',
   },
 ];
