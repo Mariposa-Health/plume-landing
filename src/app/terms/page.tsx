@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
+import TermsContent from './TermsContent';
 
 export const metadata: Metadata = {
   title: 'Plume Health - Terms of Use',
@@ -12,12 +13,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PrivacyPolicy() {
+export default function TermsPage() {
   return (
-    <Section>
+    <Section type="secondary" className="flex-1">
       <Wrapper className="text-block">
-        <h1>Terms of Use</h1>
-        <p>Content will be added soon.</p>
+        <TermsContent />
       </Wrapper>
     </Section>
   );

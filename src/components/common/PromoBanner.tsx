@@ -31,10 +31,10 @@ export default function PromoBanner() {
         )}
       </p>
       <Link
-        href={getPathWithUtm('/terms')}
+        href={getPathWithUtm('/terms-and-conditions')}
         className="underline decoration-transparent hover:decoration-current transition-colors duration-300"
       >
-        Terms of Use
+        Terms & Conditions
       </Link>
     </div>
   );

@@ -1,3 +1,5 @@
+'use client';
+
 import { addUtmToPath } from '@/utils/utm';
 import { useEffect, useState } from 'react';
 

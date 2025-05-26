@@ -51,6 +51,11 @@ body {
   }
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 h1, h2 {
   font-family: var(--font-cooper, 'Cooper TL'), serif;
   font-weight: 300;
@@ -89,7 +94,11 @@ picture {
 }
 
 .text-block {
-    :last-child {
+  :first-child {
+    margin-top: 0;
+  }
+
+  :last-child {
     margin-bottom: 0;
   }
 
@@ -98,7 +107,37 @@ picture {
   }
 
   h1, h2 {
-    margin-bottom: 24px;
+    margin-top: 24px;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 16px;
+  }
+
+  ol {
+    list-style-type: decimal;
+    padding-left: 16px;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  a {
+    color: var(--plum-100);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    transition: 0.3s;
+
+    &:hover {
+      text-decoration-color: transparent;
+    }
   }
 }
 
