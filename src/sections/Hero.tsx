@@ -8,7 +8,6 @@ import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import Wrapper from '@/components/common/Wrapper';
 import { BREAKPOINTS, GET_STARTED_URL } from '@/constants';
-import { useRouter } from 'next/navigation';
 
 export default function Hero() {
   const isMobile = useMedia('lg');
@@ -17,8 +16,9 @@ export default function Hero() {
 
   const handleClick = async () => {
     ldClient?.track('hero_button_click');
-    await ldClient?.flush?.();         
-  }
+    await ldClient?.flush?.();
+  };
+
   return (
     <Section
       className={`hero flex flex-col lg:justify-center gap-[32px] md:gap-[40px] !pt-[0px] lg:!pt-[100px] lg:bg-[#3A0469] overflow-hidden`}
@@ -49,8 +49,13 @@ export default function Hero() {
             Join thousands of trans folks getting gender-affirming care created by trans people, for
             trans people.
           </p>
-          <Button onClick={handleClick}  variant="primary" href={GET_STARTED_URL} className="mb-[24px] mx-auto lg:mx-0">
-          {heroButtonText}
+          <Button
+            onClick={handleClick}
+            variant="primary"
+            href={GET_STARTED_URL}
+            className="mb-[24px] mx-auto lg:mx-0"
+          >
+            {heroButtonText}
           </Button>
           <strong className="lg:text-[20px] lg:leading-[30px] lg:text-white">
             $32 per month plus copay with insurance, or $99 per month if self-paid
