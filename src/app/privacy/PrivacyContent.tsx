@@ -72,7 +72,8 @@ export default function PrivacyContent() {
         collected or received Personal Data from a child under 18 without verification of parental
         consent, we will delete that information. If you believe we might have any information from
         a child under 18, please contact us at{' '}
-        <a href="mailto:help@getplume.co">help@getplume.co</a> or call us at 720-897-3749
+        <a href="mailto:help@getplume.co">help@getplume.co</a> or call us at{' '}
+        <a href="tel:+18337980736">(833)-798-0736</a>
       </p>
       <h2>Information We Collect About You and How We Collect It</h2>
       <p>
@@ -436,7 +437,7 @@ export default function PrivacyContent() {
           Denver, CO 80209
         </p>
         <p>
-          Telephone: <a href="tel:+17208973749">(720) 897-3749</a>
+          Telephone: <a href="tel:+18337980736">(833)-798-0736</a>
         </p>
         <p>
           Email: <a href="mailto:help@getplume.co">help@getplume.co</a>

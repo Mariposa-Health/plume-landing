@@ -321,7 +321,7 @@ export default function PrivacyPolicy() {
           <br />
           303 South Broadway Denver, CO, 80209
           <br />
-          <a href="tel:+17208973749">(720) 897-3749</a>
+          <a href="tel:+18337980736">(833)-798-0736</a>
           <br />
           <a href="mailto:legal@getplume.co">legal@getplume.co</a>
         </address>
