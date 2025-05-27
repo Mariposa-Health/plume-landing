@@ -17,14 +17,17 @@ export const SWIPER_BREAKPOINTS = Object.fromEntries(
 export enum PromoSource {
   Meta = 'meta',
   Reddit = 'reddit',
+  TikTok = 'tiktok',
 }
 
 export const PROMO_CODES: Record<PromoSource, string> = {
   [PromoSource.Meta]: 'Plume2025',
   [PromoSource.Reddit]: 'Plume15',
+  [PromoSource.TikTok]: 'PlumePride',
 };
 
 export const PROMO_DISCOUNTS: Record<PromoSource, number> = {
   [PromoSource.Meta]: 15,
   [PromoSource.Reddit]: 15,
+  [PromoSource.TikTok]: 15,
 };

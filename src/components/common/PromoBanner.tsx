@@ -20,12 +20,17 @@ export default function PromoBanner() {
       <p className="lg:text-[20px] lg:leading-[28px]">
         {utmSource === PromoSource.Meta ? (
           <>
-            Pride Exclusive! Get ${discount}% off your first 9 months 🏳️‍⚧️{' '}
+            Pride Social Exclusive! Get {discount}% off 9 months 🏳️‍⚧️{' '}
+            <strong>Use code {promoCode}</strong>
+          </>
+        ) : utmSource === PromoSource.Reddit ? (
+          <>
+            Hey Reddit! Celebrate Pride with {discount}% off 9 months 🏳️‍⚧️{' '}
             <strong>Use code {promoCode}</strong>
           </>
         ) : (
           <>
-            Hey Reddit! Celebrate Pride with ${discount}% off your first 9 months 🏳️‍⚧️{' '}
+            Hey TikTok! Celebrate Pride with {discount}% off 9 months 🏳️‍⚧️{' '}
             <strong>Use code {promoCode}</strong>
           </>
         )}
