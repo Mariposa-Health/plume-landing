@@ -323,7 +323,7 @@ export default function PrivacyPolicy() {
           <br />
           <a href="tel:+18337980736">(833)-798-0736</a>
           <br />
-          <a href="mailto:legal@getplume.co">legal@getplume.co</a>
+          <a href="mailto:help@getplume.co">help@getplume.co</a>
         </address>
         <p>
           <strong>NOTICE OF PRIVACY PRACTICES AVAILABILITY</strong>
