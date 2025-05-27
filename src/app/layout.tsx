@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
+import { LaunchDarklyProvider } from '@/lib/LaunchDarklyProvider';
 
 const cooper = localFont({
   src: [
@@ -57,9 +58,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${cooper.variable} ${fibra.variable} min-h-screen flex flex-col`}>
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <LaunchDarklyProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </LaunchDarklyProvider>
       </body>
     </html>
   );
