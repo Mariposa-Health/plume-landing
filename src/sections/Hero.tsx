@@ -23,7 +23,7 @@ export default function Hero() {
         />
         <Image
           src="/images/hero/hero-image-mobile.jpg"
-          alt="Hero image"
+          alt="Person with closed eyes embraced from behind, surrounded by dreamy pink and purple light effects"
           width={isMobile ? 390 : 1440}
           height={isMobile ? 240 : 454}
           className="w-full lg:h-full lg:object-cover"
