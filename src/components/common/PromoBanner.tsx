@@ -3,11 +3,26 @@
 import { useUtm } from '@/hooks/useUtm';
 import { PROMO_CODES, PROMO_DISCOUNTS, PromoSource } from '@/constants';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 export default function PromoBanner() {
   const { utmSource, getPathWithUtm } = useUtm();
+  const isValidPromoSource =
+    utmSource && Object.values(PromoSource).includes(utmSource.toLowerCase() as PromoSource);
 
-  if (!utmSource || !Object.values(PromoSource).includes(utmSource.toLowerCase() as PromoSource)) {
+  useEffect(() => {
+    if (isValidPromoSource) {
+      document.body.classList.add('has-promo-banner');
+    } else {
+      document.body.classList.remove('has-promo-banner');
+    }
+
+    return () => {
+      document.body.classList.remove('has-promo-banner');
+    };
+  }, [utmSource, isValidPromoSource]);
+
+  if (!isValidPromoSource) {
     return null;
   }
 

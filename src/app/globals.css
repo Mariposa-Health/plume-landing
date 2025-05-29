@@ -34,19 +34,15 @@ body {
   line-height: 24px;
   font-family: var(--font-fibra, 'Fibra One'), sans-serif;
 
-  &:has(.promo-banner) {
-    .hero {
-      @media (min-width: theme('screens.lg')) {
-        min-height: calc(100vh - 144px);
-      }
+  &.has-promo-banner .hero {
+    @media (min-width: theme('screens.lg')) {
+      min-height: calc(100vh - 144px);
     }
   }
 
-  &:has(:not(.promo-banner)) {
-    .hero {
-      @media (min-width: theme('screens.lg')) {
-        min-height: calc(100vh - 100px);
-      }
+  &:not(.has-promo-banner) .hero {
+    @media (min-width: theme('screens.lg')) {
+      min-height: calc(100vh - 100px);
     }
   }
 }
