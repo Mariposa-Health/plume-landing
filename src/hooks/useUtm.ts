@@ -9,7 +9,7 @@ export const useUtm = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
-      const source = urlParams.get('utm-source');
+      const source = urlParams.get('utm_source');
       setUtmSource(source);
     }
   }, []);
