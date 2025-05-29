@@ -11,13 +11,12 @@ const Button = ({
   href,
   ...props
 }: InternalButtonComponentProps) => {
-  const baseClasses = 'flex justify-center items-center font-fibra font-semibold transition-colors';
+  const baseClasses = 'flex justify-center items-center font-fibra font-semibold transition-all duration-300';
 
   const variantClasses: Record<ButtonVariant, string> = {
     primary:
       'bg-[#6816AF] text-white hover:bg-[#5714a0] rounded-[25px] w-full max-w-[312px] lg:max-w-[378px]',
-    secondary: 'bg-[#3A0469] text-white hover:bg-[#2b0350] rounded-md',
-    outline: 'border border-[#6816AF] bg-white text-[#6816AF] hover:bg-gray-50 rounded-md',
+    secondary: 'text-white border border-[#fff] hover:bg-white hover:text-[#3A0469] rounded-[6px]',
   };
 
   const sizeClasses: Record<ButtonSize, string> = {

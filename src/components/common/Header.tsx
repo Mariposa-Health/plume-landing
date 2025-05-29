@@ -6,31 +6,16 @@ import { useUtm } from '@/hooks/useUtm';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import Button from './Button';
 import Wrapper from './Wrapper';
 import PromoBanner from './PromoBanner';
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const { getPathWithUtm } = useUtm();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="sticky top-0 w-full z-100">
-      <header
-        className={`py-[20px] lg:py-[24px] bg-white  transition-all duration-200 ${
-          isScrolled ? 'border-b border-[#6816AF]/25' : ''
-        }`}
-      >
+      <header className="py-[20px] lg:py-[24px] bg-[#3A0469]">
         <Wrapper className="flex items-center justify-between gap-[16px]">
           <Link href={getPathWithUtm('/')}>
             <Image

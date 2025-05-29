@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="bg-[#340B65] py-[60px]">
       <Wrapper className="flex flex-col md:flex-row md:flex-wrap items-center md:items-start md:content-between gap-[24px]">
         <Link href={getPathWithUtm('/')} className="w-fit">
-          <Image src="/logo-white.svg" alt="Plume logo" width={156} height={53} />
+          <Image src="/logo.svg" alt="Plume logo" width={156} height={53} />
         </Link>
 
         <ul className="flex flex-wrap justify-center md:justify-end gap-4 md:flex-1">
